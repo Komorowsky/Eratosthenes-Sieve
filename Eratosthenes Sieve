@@ -1,0 +1,23 @@
+print("Hello in Eratosthenes Sieve!")
+print("Enter the number and a sieve will find each prime number up to your number!")
+while True:
+    try:
+        a = int(input("Number: "))
+    except ValueError:
+        print("Please insert a positive number!")
+        continue
+    lp = []
+    for i in range(1, a+1):
+        z = 1
+        lb = []
+        while (int(z) <= int(i)):
+            if (i%z == 0):
+                lb.append(float(z))
+                z = z + 1
+            else:
+                z = z + 1
+        if (len(lb) <= 2):
+            lp.append(int(i))
+    print("There are a whole prime numbers:", lp)
+    print("We have ", len(lp)," prime numbers.")
+    print("Please insert next number!")
